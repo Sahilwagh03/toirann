@@ -60,7 +60,6 @@ function App() {
         duration:1,
         scrollTrigger:{
           trigger:'.h3_Trigger',
-          markers:true,
           start:'top 50%',
           end:'bottom 100%',
           scrub:2
