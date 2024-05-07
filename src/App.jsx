@@ -7,6 +7,13 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import Navbar from './components/Navbar'
 import { ScrollTrigger } from 'gsap/all'
+import Button from './components/Hero/components/Button'
+import Works from './components/Work/Works'
+import Whoweare from './components/Who_We_Are/Whoweare'
+import Achieved from './components/Achieved/Achieved'
+import Partner from './components/Partner/Partner'
+import WheelAnimation from './components/wheel/WheelAnimation'
+import DribbleSection from './components/Dribble/DribbleSection'
 
 function App() {
 
@@ -35,13 +42,14 @@ function App() {
       delay: 0.5,
       ease: 'power4.inOut',
       scrollTrigger: {
+        scroller: 'body',
         trigger: '.main_section',
         start: 'top 100%',
         end: 'top 0%',
         scrub: 2
       }
     }, 'g')
-    gsap.fromTo('video', {
+    gsap.fromTo('#videoDeskstop', {
       borderRadius: '100rem',
     },
       {
@@ -49,47 +57,93 @@ function App() {
         duration: 0.5,
         delay: 0.5,
         scrollTrigger: {
+          scroller: 'body',
           trigger: '.main_section',
           start: 'top 100%',
           end: 'top 0%',
           scrub: 2
         }
       }, 'g')
-      gsap.from('h3',{
-        backgroundPositionX:'100%',
-        duration:1,
-        scrollTrigger:{
-          trigger:'.h3_Trigger',
-          start:'top 50%',
-          end:'bottom 100%',
-          scrub:2
-        }
-      })
+    gsap.from('#LionSvg', {
+      opacity: 0,
+      x: '40%',
+      duration: 1,
+      y: '-130%',
+      scrollTrigger: {
+        trigger: '.h3_Trigger',
+        start: 'top 80%',
+        scroller: 'body',
+        end: 'bottom 100%',
+        endTrigger: '.lion_end',
+        scrub: 2,
+      }
+    })
+    gsap.from('.about_us', {
+      opacity: 0,
+      transform: 'translateY(40%)',
+      duration: 1,
+      stagger: 0.15,
+      scrollTrigger: {
+        trigger: '.about_animation_trigger',
+        start: 'top 90%',
+        end: 'top 40%',
+        scrub: 2
+      }
+    })
   })
 
+  const handleBlurDiv = () => {
+    gsap.to('#cursor', {
+      width: '560px',
+      transform: 'translate(-50% ,-50%)',
+      height: '560px',
+      duration: 0.3,
+      filter: 'blur(100px)'
+    })
+  }
+  const handleBlurDivLeave = () => {
+    gsap.to('#cursor', {
+      width: '20px',
+      height: '20px',
+      duration: 0.2,
+      filter: 'blur(0px)'
+    })
+  }
 
   return (
-    <div onMouseMove={handleCursor}>
+    <div onMouseMove={handleCursor} className='overflow-x-hidden'>
       <div className='w-[20px] h-[20px] rounded-full absolute bg-[#c5fcfc] mix-blend-difference z-20' id='cursor'></div>
       <svg viewBox="0 0 800 330" id='coverDiv' className='fixed z-10 '>
         <path id="curve" className=' w-full h-full bg-white bg-opacity-10 backdrop-blur-md border border-white border-opacity-10 shadow-lg' d="M 800 300 Q 400 250 0 300 L 0 0 L 800 0 L 800 300 Z"></path>
       </svg>
-      <div className='px-16 relative z-0'>
+      <img src='/Lion.svg' id='LionSvg' alt='lion' className='fixed w-[7rem] h-[7rem] right-[2rem] bottom-[2rem]' style={{ zIndex: 1 }} />
+      <div className='relative z-0'>
         <Navbar />
         <Hero />
-        <div className='h-[100vh] flex justify-center main_section relative z-0 '>
-          <div className='transform -translate-y-[65%] scaleDiv' id='videoDiv'>
-            <video loop muted autoPlay className='rounded-[1.5rem] w-full h-full scale-[0.14]'>
+        <div className='px-[1rem] md:px-16 h-auto md:h-[100vh] flex justify-center main_section relative z-0 '>
+          <div className='transform translate-y-0 md:transform md:-translate-y-[65%] scaleDiv' id='videoDiv'>
+            <video loop muted autoPlay id='videoDeskstop' className='hidden md:flex rounded-[1.5rem] w-full h-full md:scale-[0.14]'>
+              <source src='/intro-video.mp4' />
+            </video>
+            <video loop muted autoPlay className='md:hidden rounded-[1.5rem] w-full h-full scale-1'>
               <source src='/intro-video.mp4' />
             </video>
           </div>
         </div>
-        <div className='h-[100vh] flex justify-left main_section relative z-0 py-[12rem] h3_Trigger'>
-          <div className='flex flex-col text-left text_animation_div'>
-            <h3 className='text-[11rem] pt-5 pr-2 font-normal -tracking-[6px] leading-[8.4rem] text-transparent bg-[linear-gradient(90deg,_#e0eeee_50%,_#252525_50%)] bg-clip-text '>recent</h3>
-            <h3 className='text-[11rem] pt-5 font-normal -tracking-[6px] leading-[8.4rem]  text-transparent bg-[linear-gradient(90deg,_#e0eeee_50%,_#252525_50%)] bg-clip-text '>work</h3>
+        <Works />
+        <Whoweare />
+        <div className='about_animation_trigger min-[400px] w-full flex flex-col items-end px-[1rem] md:pr-16 text-left font-[Syc] text-[1.099rem] text-[#c5fcfc]'>
+          <p className='about_us mb-5 w-[400px]'>We roar with creativity, staying updated with the latest tech to make your brand a formidable force in the digital wilderness and deliver exceptional website and app experiences.</p>
+          <div className='about_us w-[400px]'>
+            <Button>About us</Button>
           </div>
         </div>
+        <Achieved />
+        <Partner />
+        <div className='py-[15rem]'>
+          <WheelAnimation handleBlurDiv={handleBlurDiv} handleBlurDivLeave={handleBlurDivLeave} />
+        </div>
+        <DribbleSection/>
       </div>
     </div>
   )
