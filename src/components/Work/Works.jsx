@@ -154,8 +154,8 @@ const Works = () => {
         <section>
             <div className=' overflow-hidden px-[1rem] md:px-16 relative h-[100vh] flex justify-left main_section relative z-0 py-[12rem] h3_Trigger'>
                 <div className='flex flex-col text-left'>
-                    <h3 className='mb-[-1.8rem] h3_first text-[6rem] md:text-[11rem] pt-5 pr-2 font-normal -tracking-[6px] leading-[8.4rem] text-transparent bg-[linear-gradient(90deg,_#e0eeee_50%,_#252525_50%)] bg-clip-text bg-[length:200%_100%]'>recent</h3>
-                    <h3 className='h3_sec text-[6rem] md:text-[11rem] pt-5 font-normal -tracking-[6px] leading-[8.4rem]  text-transparent bg-[linear-gradient(90deg,_#e0eeee_50%,_#252525_50%)] bg-clip-text bg-[length:200%_100%] mb-[2.5rem]'>work</h3>
+                    <h3 className='mb-[-1.8rem] h3_first text-[6rem] md:text-[11rem] pt-5 pr-2 font-normal -tracking-[6px] leading-[4rem] md:leading-[8.4rem] text-transparent bg-[linear-gradient(90deg,_#e0eeee_50%,_#252525_50%)] bg-clip-text bg-[length:200%_100%]'>recent</h3>
+                    <h3 className='h3_sec text-[6rem] md:text-[11rem] pt-5 font-normal -tracking-[6px] leading-[6rem] md:leading-[8.4rem]  text-transparent bg-[linear-gradient(90deg,_#e0eeee_50%,_#252525_50%)] bg-clip-text bg-[length:200%_100%] mb-[2.5rem]'>work</h3>
                     <h4 className='text-white font-[Syc] text-[1.5rem] font-normal'>
                         <div className='block overflow-hidden'>In the creative wilderness,</div>
                         <div className='block overflow-hidden'>clients find our work truly</div>
@@ -169,8 +169,8 @@ const Works = () => {
             <div className='px-[1rem] md:px-16 lion_end h-[auto] relative z-0 py-[6rem] overflow-x-hidden'>
                 {
                     workData.map((work, index) => (
-                        <div className={`min-h-[450px] flex ${work.reverse ? 'flex-row-reverse' : 'flex-row'} text-[#c5fcfc] pb-3 ${work.trigger}`}>
-                            <div className={`w-[40%] flex items-center ${work.reverse && 'justify-end'}`}>
+                        <div className={`min-h-[450px] flex  ${work.reverse ? 'flex-col-reverse gap-4 md:gap-0 md:flex-row-reverse' : 'flex-col-reverse gap-4 md:gap-0 md:flex-row'} text-[#c5fcfc] pb-3 ${work.trigger}`}>
+                            <div className={`w-full md:w-[40%] flex items-center ${work.reverse && 'justify-end'}`}>
                                 <div className={`flex flex-col ${work.reverse ? 'justify-end' : 'justify-start'} ${work.p}`}>
                                     <h2 className={`text-[4rem] ${work.reverse ? ' text-right' : 'text-left'} leading-[1]`}>
                                         {work.title}
@@ -183,7 +183,7 @@ const Works = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className='w-[60%] img_rotate_translateX'>
+                            <div className='w-full md:w-[60%] img_rotate_translateX'>
                                 <img src={work.img} alt="" className={`${index != 0 && ''} rounded-[1.5rem] w-full overflow-clip overflow-content-box ${work.className}`} />
                             </div>
                         </div>

@@ -85,7 +85,7 @@ const DribbleSection = () => {
             }
         })
         gsap.from('.img_animation', {
-            transform: 'translateY(100%)',
+            transform: 'translateY(200%)',
             scrollTrigger: {
                 trigger: '.dribble_trigger',
                 scroller: 'body',
@@ -125,8 +125,8 @@ const DribbleSection = () => {
         })
     })
     return (
-        <div className='h-full px-[1rem] md:px-16 relative z-0 pb-[12rem] dribble_trigger'>
-            <div className='absolute text-white text-[6rem] transform -translate-x-1/2 transform -translate-y-1/2 left-[50%] top-[40%] pb-[30rem]'>
+        <div className='h-full px-[1rem] md:px-16 relative z-0 dribble_trigger'>
+            <div className='absolute text-white text-[6rem] transform -translate-x-1/2 transform -translate-y-1/2 left-[50%] top-[40%] pb-[4rem]'>
                 <div className='flex flex-col items-center justify-center gap-5 hidden_animation_start'>
                     <div className='img_animation'>
                         <img src="https://trionn.com/_next/static/media/dribbble.1a51ca99.webp" alt="" width={200} height={60} />
@@ -138,7 +138,7 @@ const DribbleSection = () => {
                             <span className='inline-block'>minds emerges.</span>
                         </h4>
                     </div>
-                    <div className='button_animation'>
+                    <div className='button_animation h-fit'>
                         <Button className='w-fit h-fit text-[1.5rem]'>View project</Button>
                     </div>
                 </div>

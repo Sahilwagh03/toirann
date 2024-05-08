@@ -51,7 +51,7 @@ const WheelAnimation = ({ handleBlurDiv, handleBlurDivLeave }) => {
     return (
         // onMouseLeave={handleBlurDivLeave} onMouseEnter={handleBlurDiv}
         <div >
-            <div className='move text-[11rem] flex flex-row overflow-hidden text-white mb-[-7.5rem]'>
+            <div className='move text-[6rem] md:text-[11rem] flex flex-row overflow-hidden text-white mb-[-4.4rem] md:mb-[-7.5rem]'>
                 <div className='marque flex flex-row items-center flex-shrink-0 gap-2 px-2 transform -translate-x-[100%]'>
                     <h1>wild ideas!</h1>
                     <h1>—</h1>
@@ -73,7 +73,7 @@ const WheelAnimation = ({ handleBlurDiv, handleBlurDivLeave }) => {
                     <h1>—</h1>
                 </div>
             </div>
-            <div className='move text-[11rem] flex flex-row overflow-hidden text-white'>
+            <div className='move text-[6rem] md:text-[11rem] flex flex-row overflow-hidden text-white'>
                 <div className='marque_2 flex flex-row items-center flex-shrink-0 gap-2 px-2'>
                     <h1>let's dive in!</h1>
                     <h1>—</h1>

@@ -14,6 +14,7 @@ import Achieved from './components/Achieved/Achieved'
 import Partner from './components/Partner/Partner'
 import WheelAnimation from './components/wheel/WheelAnimation'
 import DribbleSection from './components/Dribble/DribbleSection'
+import Social from './components/Social/Social'
 
 function App() {
 
@@ -132,9 +133,9 @@ function App() {
         </div>
         <Works />
         <Whoweare />
-        <div className='about_animation_trigger min-[400px] w-full flex flex-col items-end px-[1rem] md:pr-16 text-left font-[Syc] text-[1.099rem] text-[#c5fcfc]'>
-          <p className='about_us mb-5 w-[400px]'>We roar with creativity, staying updated with the latest tech to make your brand a formidable force in the digital wilderness and deliver exceptional website and app experiences.</p>
-          <div className='about_us w-[400px]'>
+        <div className='about_animation_trigger w-full flex flex-col items-end px-[1rem] md:pr-16 text-left font-[Syc] text-[1.099rem] text-[#c5fcfc]'>
+          <p className='about_us w-full mb-5 md:w-[400px]'>We roar with creativity, staying updated with the latest tech to make your brand a formidable force in the digital wilderness and deliver exceptional website and app experiences.</p>
+          <div className='about_us w-full md:w-[400px]'>
             <Button>About us</Button>
           </div>
         </div>
@@ -144,6 +145,7 @@ function App() {
           <WheelAnimation handleBlurDiv={handleBlurDiv} handleBlurDivLeave={handleBlurDivLeave} />
         </div>
         <DribbleSection/>
+        <Social/>
       </div>
     </div>
   )

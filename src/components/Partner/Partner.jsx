@@ -43,12 +43,12 @@ const Partner = () => {
     return (
         <>
             <div className='px-[1rem] md:px-16 relative h-full relative z-0 py-[8rem] '>
-                <div className='flex flex-row justify-between'>
+                <div className='flex flex-col md:flex-row justify-between'>
                     <div className='flex flex-col text-left who_trigger partner_trigger'>
-                        <h3 className='partner_h3 mb-[-1.8rem]  text-[6rem] md:text-[15rem] pt-5 pr-2 font-normal -tracking-[6px] leading-[12rem] text-transparent bg-[linear-gradient(90deg,_#e0eeee_50%,_#252525_50%)] bg-clip-text bg-[length:200%_100%]'>parter</h3>
-                        <h3 className='love_h3 text-[6rem] md:text-[15rem] pt-5 font-normal -tracking-[6px] leading-[12rem]  text-transparent bg-[linear-gradient(90deg,_#e0eeee_50%,_#252525_50%)] bg-clip-text bg-[length:200%_100%]'>love</h3>
+                        <h3 className='partner_h3 mb-[-1.8rem]  text-[6rem] md:text-[15rem] pt-5 pr-2 font-normal -tracking-[6px] leading-[4rem] md:leading-[11rem] text-transparent bg-[linear-gradient(90deg,_#e0eeee_50%,_#252525_50%)] bg-clip-text bg-[length:200%_100%]'>parter</h3>
+                        <h3 className='love_h3 text-[6rem] md:text-[15rem] pt-5 font-normal -tracking-[6px] leading-[6rem] md:leading-[12rem]  text-transparent bg-[linear-gradient(90deg,_#e0eeee_50%,_#252525_50%)] bg-clip-text bg-[length:200%_100%]'>love</h3>
                     </div>
-                    <div className='flex self-end'>
+                    <div className='flex self-auto md:self-end'>
                         <h4 className='text-white text-left overflow-hidden font-[Syc] text-[1.5rem] font-normal para_partner h-auto'>
                             <span className='inline-block '>Take heed, as the</span>
                             <br></br>

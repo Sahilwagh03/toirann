@@ -46,11 +46,11 @@ const Whoweare = () => {
         })
     })
     return (
-        <div className='px-[1rem] md:px-16 relative h-[auto] flex justify-left relative z-0 py-[6rem]'>
+        <div className='px-[1rem] md:px-16 relative h-[auto] flex justify-left relative z-0 pt-[6rem] pb-[2rem] md:py-[6rem]'>
             <div id='who_trigger' className='flex flex-col text-left who_trigger'>
-                <h3 className='mb-[-1.8rem] who_h3 text-[6rem] md:text-[11rem] pt-5 pr-2 font-normal -tracking-[6px] leading-[8.4rem] text-transparent bg-[linear-gradient(90deg,_#e0eeee_50%,_#252525_50%)] bg-clip-text bg-[length:200%_100%]'>who</h3>
-                <h3 className='we_h3 text-[6rem] md:text-[11rem] pt-5 font-normal -tracking-[6px] leading-[8.4rem]  text-transparent bg-[linear-gradient(90deg,_#e0eeee_50%,_#252525_50%)] bg-clip-text bg-[length:200%_100%] mb-[2.5rem]'>we are</h3>
-                <h4 className='text-white flex flex-col font-[Syc] text-[2.5rem] overflow-hidden font-normal who_para'>
+                <h3 className='mb-[-1.8rem] who_h3 text-[6rem] md:text-[11rem] pt-5 pr-2 font-normal -tracking-[4px] md:-tracking-[6px] leading-[4rem] md:leading-[8.4rem] text-transparent bg-[linear-gradient(90deg,_#e0eeee_50%,_#252525_50%)] bg-clip-text bg-[length:200%_100%]'>who</h3>
+                <h3 className='we_h3 text-[6rem] md:text-[11rem] pt-5 font-normal -tracking-[4px] md:-tracking-[6px] leading-[6rem] md:leading-[8.4rem]  text-transparent bg-[linear-gradient(90deg,_#e0eeee_50%,_#252525_50%)] bg-clip-text bg-[length:200%_100%] mb-[1rem] md:mb-[2.5rem]'>we are</h3>
+                <h4 className='text-white flex flex-col font-[Syc] text-[1.6rem] md:text-[2.5rem] overflow-hidden font-normal who_para'>
                     <span className='inline-block'>As an award-winning agency</span>
                     <span className='inline-block'>within the digital jungle,</span>
                     <span className='inline-block'>TRIONN transcends </span>
