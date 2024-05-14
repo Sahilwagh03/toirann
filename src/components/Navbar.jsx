@@ -3,7 +3,7 @@ import { FiSun } from "react-icons/fi";
 import { FiBarChart2 } from "react-icons/fi";
 const Navbar = () => {
   return (
-    <header className='sticky top-0 z-10 px-[1rem] md:px-16 '>
+    <header className='z-10 px-[1rem] md:px-16 '>
       <div className='flex flex-row justify-between items-center py-10'>
         <div>
           <img src="/logo.svg" alt="" />

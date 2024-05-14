@@ -15,6 +15,8 @@ import Partner from './components/Partner/Partner'
 import WheelAnimation from './components/wheel/WheelAnimation'
 import DribbleSection from './components/Dribble/DribbleSection'
 import Social from './components/Social/Social'
+import CallToAction from './components/CallToAction/CallToAction'
+import Footer from './components/Footer/Footer'
 
 function App() {
 
@@ -88,37 +90,59 @@ function App() {
         trigger: '.about_animation_trigger',
         start: 'top 90%',
         end: 'top 40%',
-        scrub: 2
+        scrub: 1
       }
     })
   })
 
   const handleBlurDiv = () => {
     gsap.to('#cursor', {
-      width: '560px',
+      scale:15,
       transform: 'translate(-50% ,-50%)',
-      height: '560px',
       duration: 0.3,
-      filter: 'blur(100px)'
+      filter: 'blur(10px)',
+      zIndex:0
     })
   }
   const handleBlurDivLeave = () => {
     gsap.to('#cursor', {
-      width: '20px',
-      height: '20px',
+      scale:1,
       duration: 0.2,
-      filter: 'blur(0px)'
+      filter: 'blur(0px)',
+      zIndex:20
+    })
+  }
+
+  const handleLight = ()=>{
+    gsap.to('#cursor',{
+      background:'url(https://trionn.com/assets/images/torch.png)',
+      borderRadius:'0px',
+      width:'73px',
+      height:'70px',
+      mixBlendMode:'unset',
+      zIndex:0
+    })
+
+  }
+  const handleOffLight = ()=>{
+    gsap.to('#cursor',{
+      background:'#c5fcfc',
+      width:'20px',
+      height:'20px',
+      borderRadius:'100%',
+      mixBlendMode:'difference',
+      zIndex:20
     })
   }
 
   return (
     <div onMouseMove={handleCursor} className='overflow-x-hidden'>
-      <div className='w-[20px] h-[20px] rounded-full absolute bg-[#c5fcfc] mix-blend-difference z-20' id='cursor'></div>
+      <div className='hidden md:flex w-[20px] h-[20px] rounded-full absolute bg-[#c5fcfc] mix-blend-difference z-20' id='cursor'></div>
       <svg viewBox="0 0 800 330" id='coverDiv' className='fixed z-10 '>
         <path id="curve" className=' w-full h-full bg-white bg-opacity-10 backdrop-blur-md border border-white border-opacity-10 shadow-lg' d="M 800 300 Q 400 250 0 300 L 0 0 L 800 0 L 800 300 Z"></path>
       </svg>
-      <img src='/Lion.svg' id='LionSvg' alt='lion' className='fixed w-[7rem] h-[7rem] right-[2rem] bottom-[2rem]' style={{ zIndex: 1 }} />
-      <div className='relative z-0'>
+      <img src='/Lion.svg' id='LionSvg' alt='lion' className='fixed w-[5rem] h-[5rem] right-[1rem] bottom-[1rem] md:w-[7rem] md:h-[7rem] md:right-[2rem] md:bottom-[2rem]' style={{ zIndex: 1 }} />
+      <div className='relative z-0 overflow-hidden'>
         <Navbar />
         <Hero />
         <div className='px-[1rem] md:px-16 h-auto md:h-[100vh] flex justify-center main_section relative z-0 '>
@@ -142,10 +166,12 @@ function App() {
         <Achieved />
         <Partner />
         <div className='py-[15rem]'>
-          <WheelAnimation handleBlurDiv={handleBlurDiv} handleBlurDivLeave={handleBlurDivLeave} />
+          <WheelAnimation handleBlurDiv={handleBlurDiv} handleBlurDivLeave={handleBlurDivLeave}/>
         </div>
         <DribbleSection/>
         <Social/>
+        <CallToAction/>
+        <Footer handleLight={handleLight} handleOffLight={handleOffLight}/>
       </div>
     </div>
   )

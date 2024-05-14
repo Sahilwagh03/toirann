@@ -110,7 +110,7 @@ const Achieved = () => {
             scrollTrigger: {
                 trigger: '.second_card',
                 scroller: 'body',
-                start: 'top 40%',
+                start: 'top 80%',
                 end: 'top 0%',
                 scrub: 2,
             }
